@@ -30,6 +30,9 @@ jobs:
               'robots.txt',
               'sitemap.xml',
               'wrangler.toml',
+              '_headers',
+              '.well-known/security.txt',
+              'security.html',
               'demos/index.html',
               'demos/demo-barber/index.html',
               'demos/demo-coach/index.html',
@@ -103,9 +106,29 @@ jobs:
                   errors.append(f'index.html: missing conversion/SEO marker {marker}')
 
           sitemap = Path('sitemap.xml').read_text(encoding='utf-8') if Path('sitemap.xml').exists() else ''
-          for url in ['https://leadflowstudio.tech/', 'https://leadflowstudio.tech/demos/', 'https://leadflowstudio.tech/bedankt.html']:
+          for url in ['https://leadflowstudio.tech/', 'https://leadflowstudio.tech/demos/', 'https://leadflowstudio.tech/bedankt.html', 'https://leadflowstudio.tech/security.html']:
               if url not in sitemap:
                   errors.append(f'sitemap.xml: missing {url}')
+
+          headers = Path('_headers').read_text(encoding='utf-8') if Path('_headers').exists() else ''
+          required_headers = [
+              'Strict-Transport-Security',
+              'Content-Security-Policy',
+              "form-action https://formsubmit.co",
+              "frame-ancestors 'none'",
+              'X-Frame-Options: DENY',
+              'X-Content-Type-Options: nosniff',
+              'Permissions-Policy',
+              'Referrer-Policy: strict-origin-when-cross-origin',
+          ]
+          for marker in required_headers:
+              if marker not in headers:
+                  errors.append(f'_headers: missing security marker {marker}')
+
+          security_txt = Path('.well-known/security.txt').read_text(encoding='utf-8') if Path('.well-known/security.txt').exists() else ''
+          for marker in ['Contact:', 'Canonical:', 'Policy:']:
+              if marker not in security_txt:
+                  errors.append(f'.well-known/security.txt: missing {marker}')
 
           if errors:
               print('\n'.join(errors))
