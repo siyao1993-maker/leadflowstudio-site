@@ -1,8 +1,9 @@
 name = "leadflowstudio"
 compatibility_date = "2026-06-24"
+main = "src/worker.js"
 
-# Cloudflare Workers & Pages now deploys static sites as Workers with Assets.
-# This repo has no build step: the website files live in the repository root.
+# Cloudflare Workers & Pages deploys this static site as a Worker with Assets.
+# The Worker keeps room for a private /api/contact endpoint while assets stay static.
 [assets]
 directory = "."
 not_found_handling = "404-page"

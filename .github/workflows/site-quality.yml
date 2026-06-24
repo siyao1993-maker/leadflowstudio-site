@@ -30,6 +30,7 @@ jobs:
               'robots.txt',
               'sitemap.xml',
               'wrangler.toml',
+              'src/worker.js',
               '_headers',
               '.well-known/security.txt',
               'security.html',
@@ -115,7 +116,7 @@ jobs:
           required_headers = [
               'Strict-Transport-Security',
               'Content-Security-Policy',
-              "form-action https://formsubmit.co",
+              "form-action 'self' https://formsubmit.co",
               "frame-ancestors 'none'",
               'X-Frame-Options: DENY',
               'X-Content-Type-Options: nosniff',
