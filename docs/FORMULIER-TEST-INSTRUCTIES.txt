@@ -1,0 +1,28 @@
+LEADFLOW STUDIO - FORMULIER TEST
+
+Het contactformulier stuurt nu direct naar:
+Siyao1993@gmail.com
+
+FormSubmit endpoint:
+https://formsubmit.co/Siyao1993@gmail.com
+
+Belangrijk:
+Bij de eerste formulierinzending stuurt FormSubmit een activatie/verificatie-mail naar:
+Siyao1993@gmail.com
+
+Klik die verificatie één keer aan. Daarna komen formulieraanvragen automatisch binnen.
+
+Test na upload:
+1. Open https://leadflowstudio.tech/
+2. Scroll naar het formulier onderaan
+3. Vul naam, e-mail, bedrijfstype, website en bericht in
+4. Verstuur
+5. Check Siyao1993@gmail.com
+6. Klik op de FormSubmit confirm/activate link
+7. Test daarna nog één keer
+
+Na succesvolle submit gaat de bezoeker naar:
+https://leadflowstudio.tech/bedankt.html
+
+Let op:
+Het publieke mailadres op de site mag later weer info@leadflowstudio.tech worden zodra Cloudflare Email Routing volledig werkt. Voor nu gaat het formulier direct naar Gmail zodat leads niet verloren gaan.

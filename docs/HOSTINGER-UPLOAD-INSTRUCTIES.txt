@@ -1,0 +1,32 @@
+LEADFLOW STUDIO - HOSTINGER UPLOAD
+Domein: leadflowstudio.tech
+
+Upload de INHOUD van deze map naar de public_html map in Hostinger File Manager.
+
+Belangrijk:
+- Upload dus niet de map "hostinger-public_html" zelf.
+- Upload de bestanden en mappen erin:
+  - index.html
+  - 404.html
+  - robots.txt
+  - sitemap.xml
+  - demos/
+
+Na upload testen:
+1. https://leadflowstudio.tech/
+2. https://leadflowstudio.tech/demos/
+3. https://leadflowstudio.tech/demos/demo-barber/
+4. https://leadflowstudio.tech/demos/demo-coach/
+5. https://leadflowstudio.tech/demos/demo-restaurant/
+
+Contact e-mail op de site:
+info@leadflowstudio.tech
+
+Let op:
+Het formulier heeft nu een demo/API-fallback. Op Hostinger static hosting wordt de Python backend niet automatisch uitgevoerd. Voor echte leadopslag kunnen we hierna koppelen aan:
+- Hostinger PHP mail script
+- Formspree
+- Google Sheets
+- Airtable
+- Notion
+- eigen VPS/API
