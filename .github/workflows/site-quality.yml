@@ -1,0 +1,114 @@
+name: Site quality checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-static-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required files and form configuration
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import sys
+
+          root = Path('.')
+          errors = []
+
+          required_files = [
+              'index.html',
+              'bedankt.html',
+              '404.html',
+              'robots.txt',
+              'sitemap.xml',
+              'wrangler.toml',
+              'demos/index.html',
+              'demos/demo-barber/index.html',
+              'demos/demo-coach/index.html',
+              'demos/demo-restaurant/index.html',
+          ]
+          for rel in required_files:
+              if not (root / rel).exists():
+                  errors.append(f'missing required file: {rel}')
+
+          class HTMLCheck(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.forms = []
+                  self.inputs = []
+                  self.title = ''
+                  self.in_title = False
+                  self.meta_description = False
+                  self.canonical = False
+
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if tag == 'title':
+                      self.in_title = True
+                  if tag == 'form':
+                      self.forms.append(attrs)
+                  if tag in {'input', 'select', 'textarea'}:
+                      self.inputs.append(attrs.get('name', ''))
+                  if tag == 'meta' and attrs.get('name') == 'description' and attrs.get('content'):
+                      self.meta_description = True
+                  if tag == 'link' and attrs.get('rel') == 'canonical':
+                      self.canonical = True
+
+              def handle_endtag(self, tag):
+                  if tag == 'title':
+                      self.in_title = False
+
+              def handle_data(self, data):
+                  if self.in_title:
+                      self.title += data
+
+          html_files = [p for p in root.rglob('*.html') if '.git' not in p.parts]
+          for file in html_files:
+              text = file.read_text(encoding='utf-8')
+              parser = HTMLCheck()
+              parser.feed(text)
+              rel = file.as_posix()
+              if not parser.title.strip():
+                  errors.append(f'{rel}: missing <title>')
+              if rel != '404.html' and not parser.meta_description:
+                  errors.append(f'{rel}: missing meta description')
+              if rel != '404.html' and not parser.canonical:
+                  errors.append(f'{rel}: missing canonical link')
+
+          index_text = Path('index.html').read_text(encoding='utf-8')
+          index = HTMLCheck()
+          index.feed(index_text)
+          if len(index.forms) != 1:
+              errors.append(f'index.html: expected exactly 1 form, found {len(index.forms)}')
+          else:
+              action = index.forms[0].get('action')
+              method = index.forms[0].get('method', '').upper()
+              if action != 'https://formsubmit.co/Siyao1993@gmail.com':
+                  errors.append(f'index.html: unexpected form action: {action}')
+              if method != 'POST':
+                  errors.append(f'index.html: form method should be POST, got {method}')
+          for field in ['name', 'email', 'businessType', 'website', 'message', 'timeline', '_subject', '_template', '_captcha', '_next', '_honey']:
+              if field not in index.inputs:
+                  errors.append(f'index.html: missing form field {field}')
+          for marker in ['Meer aanvragen uit je website', 'metric-strip', 'Herkenbaar probleem', 'Klaar voor de eerste stap?', 'application/ld+json']:
+              if marker not in index_text:
+                  errors.append(f'index.html: missing conversion/SEO marker {marker}')
+
+          sitemap = Path('sitemap.xml').read_text(encoding='utf-8') if Path('sitemap.xml').exists() else ''
+          for url in ['https://leadflowstudio.tech/', 'https://leadflowstudio.tech/demos/', 'https://leadflowstudio.tech/bedankt.html']:
+              if url not in sitemap:
+                  errors.append(f'sitemap.xml: missing {url}')
+
+          if errors:
+              print('\n'.join(errors))
+              sys.exit(1)
+          print(f'Validated {len(html_files)} HTML files and Leadflow Studio form configuration.')
+          PY
