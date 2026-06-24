@@ -94,7 +94,7 @@ jobs:
           else:
               action = index.forms[0].get('action')
               method = index.forms[0].get('method', '').upper()
-              if action != 'https://formsubmit.co/Siyao1993@gmail.com':
+              if action != 'https://formsubmit.co/info@leadflowstudio.tech':
                   errors.append(f'index.html: unexpected form action: {action}')
               if method != 'POST':
                   errors.append(f'index.html: form method should be POST, got {method}')

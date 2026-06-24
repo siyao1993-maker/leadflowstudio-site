@@ -1,24 +1,25 @@
 # Leadflow Studio email setup
 
-Current safe setup:
+Current branded setup:
 
-- Website form submits to `https://formsubmit.co/Siyao1993@gmail.com`
-- Direct mail links temporarily use `Siyao1993@gmail.com`
-- `info@leadflowstudio.tech` should not be used for leads until it is verified to receive mail.
+- Website form submits to `https://formsubmit.co/info@leadflowstudio.tech`
+- Public direct mail links use `info@leadflowstudio.tech`
+- Cloudflare Email Routing should forward `info@leadflowstudio.tech` to `siyao1993@hotmail.com`
 
-Why:
+Important:
 
-`info@leadflowstudio.tech` is a brand address, but it must first exist as either:
+FormSubmit may need one-time activation for `info@leadflowstudio.tech`. The activation email should arrive through Cloudflare Email Routing at `siyao1993@hotmail.com`.
 
-1. Cloudflare Email Routing: `info@leadflowstudio.tech -> Siyao1993@gmail.com`, or
-2. a real mailbox via Zoho/Google Workspace/Proton/Hostinger.
+Verification checklist:
 
-Switch-over checklist:
+1. Cloudflare Email Routing destination `siyao1993@hotmail.com` is **Verified**.
+2. Routing rule exists: `info@leadflowstudio.tech -> siyao1993@hotmail.com`.
+3. Send a normal email from a different mailbox to `info@leadflowstudio.tech`.
+4. Confirm it arrives in `siyao1993@hotmail.com`.
+5. Submit the website form.
+6. Confirm the FormSubmit activation email in `siyao1993@hotmail.com` if requested.
+7. Test the form again after activation.
 
-1. Send a normal email from a different mailbox to `info@leadflowstudio.tech`.
-2. Confirm it arrives in `Siyao1993@gmail.com`.
-3. Submit the website form if FormSubmit is pointed to `info@leadflowstudio.tech`.
-4. Confirm the FormSubmit activation email.
-5. Only then change public mail links and/or FormSubmit target to `info@leadflowstudio.tech`.
+Fallback:
 
-Until that checklist passes, keep Gmail as the delivery target so leads are not lost.
+If mails do not arrive at Hotmail, temporarily switch the form back to `https://formsubmit.co/Siyao1993@gmail.com` so leads are not lost while email routing is debugged.
