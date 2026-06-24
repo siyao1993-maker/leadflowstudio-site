@@ -1,4 +1,4 @@
-name = "leadflowstudio"
+name = "leadflowstudio-site"
 compatibility_date = "2026-06-24"
 
 # Cloudflare Workers & Pages now deploys static sites as Workers with Assets.
