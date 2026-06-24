@@ -1,0 +1,8 @@
+name = "leadflowstudio"
+compatibility_date = "2026-06-24"
+
+# Cloudflare Workers & Pages now deploys static sites as Workers with Assets.
+# This repo has no build step: the website files live in the repository root.
+[assets]
+directory = "."
+not_found_handling = "404-page"

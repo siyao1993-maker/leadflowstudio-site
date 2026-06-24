@@ -55,3 +55,20 @@ Open:
 ```text
 http://127.0.0.1:8080
 ```
+
+## Cloudflare Workers & Pages Git deployment
+
+Cloudflare's newer dashboard may create a **Worker with Assets** instead of the old separate Pages flow. That is OK for this static website.
+
+Use these settings:
+
+```text
+Repository: siyao1993-maker/leadflowstudio-site
+Branch: main
+Build command: leave empty, or use: echo "No build needed"
+Deploy command: npx wrangler deploy
+Root directory: /
+```
+
+The `wrangler.toml` file tells Cloudflare to deploy the repository root as static assets.
+
