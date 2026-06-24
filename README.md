@@ -34,11 +34,7 @@ Root directory: /
 
 ## Contact form
 
-The contact form currently submits through FormSubmit directly to:
-
-```text
-Siyao1993@gmail.com
-```
+The contact form submits through FormSubmit to the private receiving inbox. Do not publish the personal receiving address in visible website copy.
 
 On first submission, FormSubmit may send a confirmation email. Confirm it once, then future form submissions should be delivered normally.
 

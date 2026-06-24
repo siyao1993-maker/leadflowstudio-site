@@ -2,8 +2,8 @@
 
 Current safe setup while Cloudflare Email Routing is being debugged:
 
-- Website form submits to `https://formsubmit.co/Siyao1993@gmail.com`
-- Public direct mail links temporarily use `Siyao1993@gmail.com`
+- Website form submits through FormSubmit to the private receiving inbox
+- Public direct mail links are disabled; visitors use the form
 - `info@leadflowstudio.tech` should not be used for live leads until messages are visible in the destination inbox.
 
 Current routing attempt:

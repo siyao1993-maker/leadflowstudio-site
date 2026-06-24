@@ -1,14 +1,14 @@
 LEADFLOW STUDIO - FORMULIER TEST
 
 Het contactformulier stuurt nu direct naar:
-Siyao1993@gmail.com
+[private receiving inbox]
 
 FormSubmit endpoint:
-https://formsubmit.co/Siyao1993@gmail.com
+the configured FormSubmit endpoint
 
 Belangrijk:
 Bij de eerste formulierinzending stuurt FormSubmit een activatie/verificatie-mail naar:
-Siyao1993@gmail.com
+[private receiving inbox]
 
 Klik die verificatie één keer aan. Daarna komen formulieraanvragen automatisch binnen.
 
@@ -17,7 +17,7 @@ Test na upload:
 2. Scroll naar het formulier onderaan
 3. Vul naam, e-mail, bedrijfstype, website en bericht in
 4. Verstuur
-5. Check Siyao1993@gmail.com
+5. Check [private receiving inbox]
 6. Klik op de FormSubmit confirm/activate link
 7. Test daarna nog één keer
 
