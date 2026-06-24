@@ -1,7 +1,4 @@
-.DS_Store
-Thumbs.db
-*.log
-__pycache__/
-.pytest_cache/
+.wrangler/
 node_modules/
 .env
+.env.*
