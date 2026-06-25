@@ -36,6 +36,7 @@ jobs:
               'security.html',
               'gratis-website-audit/index.html',
               'starter-website/index.html',
+              'websites-voor-kappers/index.html',
               'demos/index.html',
               'demos/demo-barber/index.html',
               'demos/demo-coach/index.html',
@@ -109,7 +110,7 @@ jobs:
                   errors.append(f'index.html: missing conversion/SEO marker {marker}')
 
           sitemap = Path('sitemap.xml').read_text(encoding='utf-8') if Path('sitemap.xml').exists() else ''
-          for url in ['https://leadflowstudio.tech/', 'https://leadflowstudio.tech/demos/', 'https://leadflowstudio.tech/bedankt.html', 'https://leadflowstudio.tech/security.html', 'https://leadflowstudio.tech/gratis-website-audit/', 'https://leadflowstudio.tech/starter-website/']:
+          for url in ['https://leadflowstudio.tech/', 'https://leadflowstudio.tech/demos/', 'https://leadflowstudio.tech/bedankt.html', 'https://leadflowstudio.tech/security.html', 'https://leadflowstudio.tech/gratis-website-audit/', 'https://leadflowstudio.tech/websites-voor-kappers/', 'https://leadflowstudio.tech/starter-website/']:
               if url not in sitemap:
                   errors.append(f'sitemap.xml: missing {url}')
 
