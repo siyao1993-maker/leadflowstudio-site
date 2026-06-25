@@ -1,9 +1,9 @@
 name = "leadflowstudio"
 compatibility_date = "2026-06-24"
-main = "src/worker.js"
 
-# Cloudflare Workers & Pages deploys this static site as a Worker with Assets.
-# The Worker keeps room for a private /api/contact endpoint while assets stay static.
+# Cloudflare Workers & Pages deploys this static site as static assets.
+# Keep src/worker.js in the repo as a prepared contact endpoint, but do not
+# activate it until the assets binding is configured and tested in Cloudflare.
 [assets]
 directory = "."
 not_found_handling = "404-page"
