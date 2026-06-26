@@ -103,8 +103,8 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#top"><span class="logo">L</span><span>Leadflow Studio<small>Websites & leadflows</small></span></a>
-      <button class="menu" onclick="toggleMenu()">Menu</button>
-      <div class="nav-links">
+      <button class="menu" type="button" aria-controls="site-navigation" aria-expanded="false" onclick="toggleMenu(this)">Menu</button>
+      <div class="nav-links" id="site-navigation">
         <a href="#diensten">Diensten</a><a href="#waarom-ons">Waarom</a><a href="#case-study">Case</a><a href="/starter-website/">Aanbod</a><a href="#portfolio">Demo's</a><a href="#contact">Contact</a><a class="btn primary nav-cta" href="/gratis-website-audit/">Gratis audit</a>
       </div>
     </div>
@@ -178,7 +178,11 @@
   <footer><div class="wrap footer-grid"><div><b>Leadflow Studio</b><br>Websites met slimme automatisering.<br><a href="#contact">Gebruik het contactformulier</a></div><div>leadflowstudio.tech • Websites die aanvragen opleveren<br><a href="/security.html">Security</a></div></div></footer>
   <div class="toast"></div>
   <script>
-    function toggleMenu(){document.querySelector('.nav-links').classList.toggle('open')}
+    function toggleMenu(button){
+      const nav = document.querySelector('.nav-links');
+      const isOpen = nav.classList.toggle('open');
+      if(button) button.setAttribute('aria-expanded', String(isOpen));
+    }
   </script>
 </body>
 </html>
