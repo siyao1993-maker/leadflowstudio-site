@@ -1,19 +1,18 @@
 WERKEND CONTACTFORMULIER - LEADFLOW STUDIO
 
-Het formulier gebruikt nu FormSubmit:
-https://formsubmit.co/info@leadflowstudio.tech
+Het live formulier gebruikt nu FormSubmit met de bewezen werkende ontvanger:
+https://formsubmit.co/Siyao1993@gmail.com
 
-Belangrijk: bij de eerste echte formulierinzending stuurt FormSubmit een activatie/verificatie-mail naar:
-info@leadflowstudio.tech
+Belangrijk: verander dit niet naar info@leadflowstudio.tech totdat dat mailboxadres zichtbaar normale e-mail ontvangt én FormSubmit daar één keer is geactiveerd. Zo voorkom je leadverlies.
 
-Je moet die verificatie één keer bevestigen. Daarna worden nieuwe aanvragen automatisch doorgestuurd naar info@leadflowstudio.tech.
+Bij de eerste echte formulierinzending naar een nieuwe ontvanger stuurt FormSubmit een activatie/verificatie-mail naar die ontvanger. Je moet die verificatie één keer bevestigen. Daarna worden nieuwe aanvragen automatisch doorgestuurd naar de geactiveerde inbox.
 
 Test na upload:
 1. Open https://leadflowstudio.tech/
 2. Vul het formulier onderaan in
 3. Verstuur
-4. Check info@leadflowstudio.tech voor de FormSubmit verificatie
-5. Klik op confirm/activate
+4. Check de ontvanger-inbox voor de FormSubmit verificatie of testaanvraag
+5. Klik op confirm/activate als FormSubmit daarom vraagt
 6. Test nog een keer
 
 Na succesvolle submit gaat de bezoeker naar:
