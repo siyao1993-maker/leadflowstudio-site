@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Leadflow Studio social preview</title>
+  <desc id="desc">Branded preview card for Leadflow Studio: websites die aanvragen opleveren.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f14"/>
+      <stop offset="0.55" stop-color="#102033"/>
+      <stop offset="1" stop-color="#0b0f14"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#55e6a5"/>
+      <stop offset="1" stop-color="#4da3ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.33 0 0 0 0 0.9 0 0 0 0 0.65 0 0 0 0.55 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="95" r="210" fill="#4da3ff" opacity="0.18"/>
+  <circle cx="160" cy="560" r="250" fill="#55e6a5" opacity="0.14"/>
+  <rect x="70" y="70" width="1060" height="490" rx="42" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.16"/>
+  <g transform="translate(116 116)">
+    <rect width="82" height="82" rx="26" fill="url(#accent)" filter="url(#glow)"/>
+    <text x="41" y="56" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="900" fill="#06100c">L</text>
+    <text x="112" y="34" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="900" fill="#edf4ff">Leadflow Studio</text>
+    <text x="112" y="68" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" fill="#9fb4cc">Websites &amp; leadflows voor lokale ondernemers</text>
+  </g>
+  <text x="116" y="305" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="900" fill="#edf4ff" letter-spacing="-2">Websites die aanvragen</text>
+  <text x="116" y="380" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="900" fill="#55e6a5" letter-spacing="-2">opleveren.</text>
+  <text x="116" y="440" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="650" fill="#cfe0f4">Snelle statische sites, duidelijke CTA’s en menselijke eindcheck.</text>
+  <g transform="translate(116 486)" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">
+    <rect width="176" height="46" rx="23" fill="#55e6a5"/>
+    <text x="88" y="30" text-anchor="middle" fill="#06100c">Gratis audit</text>
+    <rect x="196" width="220" height="46" rx="23" fill="#ffffff" fill-opacity="0.09" stroke="#ffffff" stroke-opacity="0.18"/>
+    <text x="306" y="30" text-anchor="middle" fill="#edf4ff">Binnen 7 dagen live</text>
+  </g>
+</svg>
